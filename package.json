@@ -1,0 +1,10 @@
+{
+  "name": "magpie-splash",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./index.mjs",
+  "files": ["index.mjs", "discovery.mjs", "models.mjs", "lifecycle.mjs", "supervisor.mjs", "README.md"],
+  "keywords": ["opencode", "opencode-plugin", "provider", "splash"],
+  "magpie": { "icon": "https://avatars.githubusercontent.com/u/282140180" },
+  "scripts": { "test": "node --test test/*.test.mjs" }
+}
