@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Raise the default context window to 262144 tokens (256K), capped by each installed model's declared window; explicit context options still take precedence.
+
 ## 0.1.0
 
 - Detect local-path CLI support before starting Splash; installed versions without it use the model ID in offline mode.

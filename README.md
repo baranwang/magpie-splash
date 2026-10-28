@@ -14,7 +14,7 @@ brew install incoai/tap/splash
 
 ```sh
 magpie plugin add "$PWD"
-magpie plugin options magpie-splash '{"context":32768,"idleMs":300000}'
+magpie plugin options magpie-splash '{"context":262144,"idleMs":300000}'
 magpie plugin login splash
 ```
 
@@ -40,7 +40,7 @@ magpie plugin login splash
 | --- | --- | --- |
 | `modelsDir` | `~/Library/Application Support/Splash/models/` | 本地安装目录，支持 `~/`；源码安装填仓库的 `install/models/` |
 | `model` | 无 | 仅外部服务模式使用的模型 ID |
-| `context` | `32768` | 上下文上限，不超过安装模型配置中的窗口 |
+| `context` | `262144`（256K） | 上下文上限，不超过安装模型配置中的窗口 |
 | `vision` | `false` | 仅外部模式；本地模型从安装元数据读取图片能力 |
 | `idleMs` | `300000` | 最后一个请求结束后的进程退出等待，毫秒，正数 |
 | `startupMs` | `600000` | 启动的最长等待，毫秒，正数 |
@@ -56,8 +56,8 @@ magpie plugin login splash
 ## 连接已经运行的 Splash
 
 ```sh
-splash serve --model mlx-community/Qwen3.8-27B-4bit --max-context 32768 --idle-release 5m
-magpie plugin options magpie-splash '{"model":"mlx-community/Qwen3.8-27B-4bit","context":32768,"baseURL":"http://127.0.0.1:8000/v1"}'
+splash serve --model mlx-community/Qwen3.8-27B-4bit --max-context 262144 --idle-release 5m
+magpie plugin options magpie-splash '{"model":"mlx-community/Qwen3.8-27B-4bit","context":262144,"baseURL":"http://127.0.0.1:8000/v1"}'
 magpie plugin login splash
 ```
 

@@ -3,7 +3,7 @@ import { discoverModels } from './discovery.mjs';
 import { ModelRunner } from './models.mjs';
 
 export default async function SplashPlugin(_input, options = {}) {
-  const context = options.context ?? 32768;
+  const context = options.context ?? 262144;
   if (!Number.isInteger(context) || context < 1024) throw new Error('Splash context must be an integer >= 1024');
   for (const key of ['idleMs', 'startupMs']) {
     if (options[key] !== undefined && (!Number.isFinite(options[key]) || options[key] <= 0)) throw new Error(`Splash ${key} must be positive`);
